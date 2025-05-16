@@ -1,0 +1,582 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "PT Serif", serif;
+}
+
+.header {
+    position: relative;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    animation: cambiarFondo 30s infinite linear;
+}
+
+@keyframes cambiarFondo {
+    0% { background-image: url('../imagenes/Fondo1.webp'); }
+    33% { background-image: url('../imagenes/Fondo1.webp'); } 
+    36% { background-image: url('../imagenes/Fondo2.jpg'); }  
+    66% { background-image: url('../imagenes/Fondo2.jpg'); }  
+    69% { background-image: url('../imagenes/Fondo3.jpg'); }  
+    100% { background-image: url('../imagenes/Fondo3.jpg'); }  
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0; 
+}
+
+
+.navbar {
+    font-size: 1.3em;
+    position: fixed; 
+    top: 0;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 50px; 
+    background: rgb(37, 37, 37); 
+    box-sizing: border-box;
+    z-index: 10; 
+}
+
+.navbar ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li {
+    position: relative; 
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease; 
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    color: #6593b9; 
+    background-color: rgba(167, 216, 255, 0.2); 
+}
+
+.navbar li:hover > ul {
+    display: block; 
+}
+
+.navbar ul ul {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul ul li {
+    width: 180px; 
+}
+
+/* Estilo del segundo nivel (submenú) */
+.navbar ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
+
+/* Estilo del tercer nivel (submenú dentro de otro submenú) */
+.navbar ul ul ul {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Mueve el tercer nivel a la derecha */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+/* Mostrar el tercer nivel cuando se pasa el mouse sobre el segundo nivel */
+.navbar ul ul li:hover > ul {
+    display: block;
+}
+
+/* Ajustar el ancho de los submenús */
+.navbar ul ul li {
+    width: 200px;
+    position: relative;
+}
+
+/* Ajuste de los enlaces dentro del tercer nivel */
+.navbar ul ul ul a {
+    padding: 10px 15px;
+    color: rgb(0, 0, 0);
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse */
+.navbar ul ul ul a:hover {
+    background-color: #555;
+}
+.salva {
+    width: 250px;
+    position: absolute;
+    left: 85%;
+    top: 37%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.salva:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* SECCIÓN CREADORES - CONTENEDOR GENERAL */
+@keyframes pulseShadow {
+    0% {
+        box-shadow: 0 10px 25px  rgba(0, 153, 255, 0.25);
+    }
+    50% {
+        box-shadow: 0 15px 35px rgba(0, 153, 255, 0.545);
+    }
+    100% {
+        box-shadow: 0 10px 25px rgba(0, 153, 255, 0.25);
+    }
+}
+
+.form-section {
+    background-color: #8c8e8e;
+    padding: 40px 50px;
+    max-width: 800px;
+    margin: 60px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(51, 51, 51, 0.2);
+    transition: all 0.3s ease;
+    border-left: 5px solid #c9e9ff;
+    position: relative;
+    animation: sombraAnimada 3s ease-in-out infinite;
+}
+
+@keyframes sombraAnimada {
+    0% {
+        box-shadow: 0 8px 25px rgba(15, 119, 205, 0.841);
+    }
+    50% {
+        box-shadow: 0 12px 35px rgba(1, 107, 228, 0.793);
+    }
+    100% {
+        box-shadow: 0 8px 25px  rgba(15, 119, 205, 0.841);
+    }
+}
+/* Animación suave al pasar el mouse */
+.form-section:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 5);
+    transform: translateY(-5px);
+}
+
+/* Título del formulario */
+.form-section h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #c4e9f7;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Línea debajo del título */
+.form-section h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: #c1e3fa;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo de los grupos de formulario */
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Etiquetas */
+.form-group label {
+    font-size: 18px;
+    color: #e5f6ff;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+/* Campos de entrada */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 12px;
+}
+
+/* Enfoque en los campos */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #b6ddf6;
+    background-color: #ecf8ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+/* Placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+/* Estilo de la caja de texto */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Estilo del botón */
+.submit-btn {
+    background-color: #acddfd;
+    color: #484646;
+    font-size: 20px;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.1);
+}
+
+/* Efecto de hover en el botón */
+.submit-btn:hover {
+    background-color: #7ebee8;
+    transform: scale(1.05);
+}
+
+/* Efecto de clic en el botón */
+.submit-btn:active {
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+    transform: scale(0.98);
+}
+
+/* Borde de los campos de entrada */
+.form-group input:focus,
+.form-group textarea:focus {
+    border: 2px solid #3498db;
+}
+
+/* Efecto de sombra en los campos al enfocarse */
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Estilo de los bordes del formulario */
+.form-section {
+    border: 2px solid #ddd;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Animación de foco del formulario */
+@keyframes focus-animation {
+    0% {
+        border-color: #3498db;
+    }
+    50% {
+        border-color: #2980b9;
+    }
+    100% {
+        border-color: #3498db;
+    }
+}
+
+/* Agregando una animación al enfocarse */
+.form-group input:focus,
+.form-group textarea:focus {
+    animation: focus-animation 1s ease-in-out infinite;
+}
+
+/* Agregar sombras en el borde */
+.form-section {
+    border-top: 5px solid #bddef4;
+}
+
+/* Transición en el formulario */
+.form-section {
+    transition: all 0.3s ease-in-out;
+}
+
+.form-section:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+
+#footer {
+    margin-top: 50px;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 19px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Ajuste logo y redes en footer */
+.logaso {
+    width: 100px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.social-icons {
+    float: right;
+    margin-right: 20px;
+    padding: 10px 0;
+}
+
+.icon img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Clear floats footer */
+#footer::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+@media (max-width: 1400px) {
+      .salva {
+        width: 260px;
+        left: 71%;
+        top: 30%;
+    }
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .navbar {
+        font-size: 1.1em;
+        padding: 15px 30px;
+    }
+
+    .header {
+        height: 600px;
+    }
+
+    .form-section {
+        padding: 30px;
+        margin: 30px auto;
+    }
+
+    .form-section h2 {
+        font-size: 32px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        padding: 8px;
+    }
+
+        .salva {
+        width: 260px;
+        left: 71%;
+        top: 39%;
+    }
+}
+@media (max-width: 992px)
+{
+    .salva {
+        width: 260px;
+        left: 35%;
+        top: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        font-size: 1em;
+        padding: 15px 20px;
+    }
+
+    .header {
+        height: 500px;
+    }
+
+    .form-section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .form-section h2 {
+        font-size: 28px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;                
+        background-color: #ffffff;
+
+    }
+
+    .navbar li {
+        margin: 8px 0;
+    }
+     .navbar ul ul,
+.navbar ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 999;
+    display: none;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+    .navbar a {
+        padding: 8px 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .submit-btn {
+        font-size: 18px;
+        padding: 14px 25px;
+    }
+        .salva {
+        width: 260px;
+        left: 33%;
+        top: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    .header {
+        height: 400px;
+    }
+
+    .form-section {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .form-section h2 {
+        font-size: 24px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+    }
+
+    .navbar a {
+        padding: 6px 12px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    #footer .social-icons {
+        flex-direction: column;
+    }
+
+    .icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+            .salva {
+        width: 270px;
+        left: 21%;
+        top: 33%;
+    }
+}

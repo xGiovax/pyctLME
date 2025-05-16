@@ -1,0 +1,627 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "PT Serif", serif;
+}
+
+.header {
+    position: relative;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    animation: cambiarFondo 30s infinite linear;
+}
+
+
+  
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0; 
+}
+
+
+.navbar {
+    font-size: 1.3em;
+    position: fixed; 
+    top: 0;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 50px; 
+    background: rgb(37, 37, 37); 
+    box-sizing: border-box;
+    z-index: 10; 
+}
+
+.navbar ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li {
+    position: relative; 
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease; 
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    color: #6593b9; 
+    background-color: rgba(167, 216, 255, 0.2); 
+}
+
+.navbar li:hover > ul {
+    display: block; 
+}
+
+.navbar ul ul {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul ul li {
+    width: 180px; 
+}
+
+/* Estilo del segundo nivel (submenú) */
+.navbar ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
+
+/* Estilo del tercer nivel (submenú dentro de otro submenú) */
+.navbar ul ul ul {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Mueve el tercer nivel a la derecha */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+/* Mostrar el tercer nivel cuando se pasa el mouse sobre el segundo nivel */
+.navbar ul ul li:hover > ul {
+    display: block;
+}
+
+/* Ajustar el ancho de los submenús */
+.navbar ul ul li {
+    width: 200px;
+    position: relative;
+}
+
+/* Ajuste de los enlaces dentro del tercer nivel */
+.navbar ul ul ul a {
+    padding: 10px 15px;
+    color: rgb(0, 0, 0);
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse */
+.navbar ul ul ul a:hover {
+    background-color: #555;
+}
+
+
+.galeria {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.galeria h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.grupo-galeria {
+    margin-bottom: 10px;
+}
+.grupo-galeria h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.grid-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grid-galeria img {
+    
+    width: 100%;
+    height: 250px;  
+    object-fit: cover; 
+    border-radius: 10px;
+    padding:0%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display:flexbox;
+    
+}
+.gale{
+    width: 30%;
+    margin: 1px; 
+    padding:1px;
+    display: inline-block;
+    box-sizing: border-box
+    
+}
+
+/* Grid de imágenes */
+
+.grid-galeria img:hover {
+    transform: scale(1.05);
+}
+
+
+
+@keyframes cambiarFondo {
+    0% { background-image: url('/imagenes/Fondo1.webp'); }
+    33% { background-image: url('/imagenes/Fondo1.webp'); } 
+    36% { background-image: url('/imagenes/Fondo2.jpg'); }  
+    66% { background-image: url('/imagenes/Fondo2.jpg'); }  
+    69% { background-image: url('/imagenes/Fondo3.jpg'); }  
+    100% { background-image: url('/imagenes/Fondo3.jpg'); }  
+}
+.arrow {
+      position: fixed;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 24px;
+      background: #6b6f73;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease;
+    }
+
+    .arrow:hover {
+      background: #848a8f;
+    }
+
+    /* Posiciones específicas */
+    .arrow-up {
+      bottom: 80px;
+    }
+
+    .arrow-down {
+      bottom: 20px;
+    }
+    
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0; 
+}
+
+.header h1 {
+    z-index: 1;
+    font-size: 6em;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar {
+    font-size: 1.3em;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 50px; 
+    background: rgb(37, 37, 37); 
+    box-sizing: border-box;
+    z-index: 10; 
+}
+
+.navbar ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li {
+    position: relative; 
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease; 
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    color: #A7D8FF; 
+    background-color: rgba(167, 216, 255, 0.2); 
+}
+
+.navbar li:hover > ul {
+    display: block; 
+}
+
+.navbar ul ul {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul ul li {
+    width: 180px; 
+}
+
+/* Estilo del segundo nivel (submenú) */
+.navbar ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
+
+/* Estilo del tercer nivel (submenú dentro de otro submenú) */
+.navbar ul ul ul {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Mueve el tercer nivel a la derecha */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+/* Mostrar el tercer nivel cuando se pasa el mouse sobre el segundo nivel */
+.navbar ul ul li:hover > ul {
+    display: block;
+}
+
+/* Ajustar el ancho de los submenús */
+.navbar ul ul li {
+    width: 200px;
+    position: relative;
+}
+
+/* Ajuste de los enlaces dentro del tercer nivel */
+.navbar ul ul ul a {
+    padding: 10px 15px;
+    color: rgb(0, 0, 0);
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse */
+.navbar ul ul ul a:hover {
+    background-color: #555;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 1.9em;
+    margin-top: 80px; 
+}
+
+article {
+    background-color: #80CEE1;
+    padding: 50px;
+    margin: 45px 0;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.turismo {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.turismo h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tarjetas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tarjeta {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    color: #0077cc;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    font-size: 1em;
+    color: #555;
+}
+
+#footer {
+    margin-top: 50px;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 19px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Ajuste logo y redes en footer */
+.logaso {
+    width: 100px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.social-icons {
+    float: right;
+    margin-right: 20px;
+    padding: 10px 0;
+}
+
+.icon img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.salva {
+    width: 250px;
+    position: absolute;
+    left: 85%;
+    top: 37%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.salva:hover {
+    transform: none;
+    box-shadow: none;
+}
+/* Clear floats footer */
+#footer::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* ------------------------------
+   RESPONSIVE - PANTALLAS PEQUEÑAS
+
+------------------------------- */
+
+@media (max-width: 1400px) {
+    .salva {
+        width: 260px;
+        left: 71%;
+        top: 30%;
+    }
+}
+@media (max-width: 1200px) {
+    .salva {
+        width: 210px;
+        left: 78%;
+        top: 40%;
+    }
+}
+@media (max-width: 768px) {
+  .header {
+    height: 500px;
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 3em;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .galeria {
+    padding: 20px 10px;
+  }
+
+  .grid-galeria {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .gale {
+    width: 90% !important;
+  }
+
+  .tarjetas-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .tarjeta {
+    width: 90%;
+  }
+
+  article {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .turismo h2 {
+    font-size: 2em;
+  }
+
+  .navbar ul ul,
+  .navbar ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 999;
+    display: none;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .navbar ul ul li {
+    width: 100%;
+  }
+
+      .salva {
+        width: 280px;
+        left: 33%;
+        top: 30%;
+    }
+}
+
+/* ------------------------------
+   RESPONSIVE - TABLETS Y MÁS PEQUEÑOS
+------------------------------- */
+@media (max-width: 992px) {
+  .header h1 {
+    font-size: 4em;
+  }
+
+  .gale {
+    width: 45%;
+  }
+
+  .tarjetas-container {
+    gap: 15px;
+  }
+
+     .salva {
+        width: 260px;
+        left: 35%;
+        top: 40%;
+    }
+}
+
+/* ------------------------------
+   RESPONSIVE - EXTRA PEQUEÑO
+------------------------------- */
+@media (max-width: 600px) {
+  .header {
+    height: 400px;
+  }
+
+  .header h1 {
+    font-size: 2.5em;
+  }
+
+  .navbar {
+    font-size: 1em;
+  }
+
+  .galeria h2,
+  .grupo-galeria h3,
+  .turismo h2 {
+    font-size: 1.5em;
+  }
+
+  .tarjeta h3 {
+    font-size: 1.3em;
+  }
+ .salva {
+        width: 270px;
+        left: 21%;
+        top: 33%;
+    }
+
+}

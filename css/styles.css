@@ -1,0 +1,585 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "PT Serif", serif;
+}
+
+.header {
+    position: relative;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    animation: cambiarFondo 30s infinite linear;
+}
+
+@keyframes cambiarFondo {
+    0% { background-image: url('../imagenes/Fondo1.webp'); }
+    33% { background-image: url('../imagenes/Fondo1.webp'); } 
+    36% { background-image: url('../imagenes/Fondo2.jpg'); }  
+    66% { background-image: url('../imagenes/Fondo2.jpg'); }  
+    69% { background-image: url('../imagenes/Fondo3.jpg'); }  
+    100% { background-image: url('../imagenes/Fondo3.jpg'); }  
+}
+
+
+  
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0; 
+}
+
+
+.navbar {
+    font-size: 1.3em;
+    position: fixed; 
+    top: 0;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 50px; 
+    background: rgb(37, 37, 37); 
+    box-sizing: border-box;
+    z-index: 10; 
+}
+
+.navbar ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li {
+    position: relative; 
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease; 
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    color: #6593b9; 
+    background-color: rgba(167, 216, 255, 0.2); 
+}
+
+.navbar li:hover > ul {
+    display: block; 
+}
+
+.navbar ul ul {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul ul li {
+    width: 180px; 
+}
+
+/* Estilo del segundo nivel (submenú) */
+.navbar ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
+
+/* Estilo del tercer nivel (submenú dentro de otro submenú) */
+.navbar ul ul ul {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Mueve el tercer nivel a la derecha */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+/* Mostrar el tercer nivel cuando se pasa el mouse sobre el segundo nivel */
+.navbar ul ul li:hover > ul {
+    display: block;
+}
+
+/* Ajustar el ancho de los submenús */
+.navbar ul ul li {
+    width: 200px;
+    position: relative;
+}
+
+/* Ajuste de los enlaces dentro del tercer nivel */
+.navbar ul ul ul a {
+    padding: 10px 15px;
+    color: rgb(0, 0, 0);
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse */
+.navbar ul ul ul a:hover {
+    background-color: #555;
+}
+
+.salva {
+    width: 250px;
+    position: absolute;
+    left: 85%;
+    top: 37%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.salva:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* SECCIÓN CREADORES - CONTENEDOR GENERAL */
+@keyframes pulseShadow {
+    0% {
+        box-shadow: 0 10px 25px  rgba(0, 153, 255, 0.623);
+    }
+    50% {
+        box-shadow: 0 15px 35px rgba(0, 153, 255, 0.25);
+    }
+    100% {
+        box-shadow: 0 10px 25px rgba(0, 153, 255, 0.623)
+    }
+}
+
+.tarjeta{
+    animation: pulseShadow 4s ease-in-out infinite;
+    transition: box-shadow 0.4s ease;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.9em;
+    margin-top: 80px; 
+}
+
+article {
+    background-color: #80CEE1;
+    padding: 50px;
+    margin: 45px 0;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.turismo {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.turismo h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tarjetas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tarjeta {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    color: #0077cc;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    font-size: 1.5em;
+    color: #555;
+}
+
+h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .tabla-canciones {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabla-canciones th, .tabla-canciones td {
+      padding: 15px 20px;
+      text-align: left;
+    }
+
+    .tabla-canciones thead {
+      background-color: #0074D9;
+      color: white;
+    }
+
+    .tabla-canciones tbody tr {
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s ease;
+    }
+
+    .tabla-canciones tbody tr:hover {
+      background-color: #f0f8ff;
+    }
+
+    .btn-reproducir {
+      background-color: #0074D9;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-reproducir:hover {
+      background-color: #005fa3;
+    }
+
+    .duracion {
+      margin-left: 10px;
+      color: #555;
+      font-size: 13px;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .tabla-canciones thead {
+        display: none;
+      }
+
+      .tabla-canciones, .tabla-canciones tbody, .tabla-canciones tr, .tabla-canciones td {
+        display: block;
+        width: 100%;
+      }
+
+      .tabla-canciones tr {
+        margin-bottom: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .tabla-canciones td {
+        padding: 12px;
+        text-align: right;
+        position: relative;
+      }
+
+      .tabla-canciones td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 12px;
+        font-weight: bold;
+        text-align: left;
+        color: #555;
+      }
+    }
+
+
+/* FOOTER */
+#footer {
+    margin-top: 50px;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 19px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Ajuste logo y redes en footer */
+.logaso {
+    width: 100px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.social-icons {
+    float: right;
+    margin-right: 20px;
+    padding: 10px 0;
+}
+
+.icon img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Clear floats footer */
+#footer::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.video-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.video-section h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.video-directo {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+
+@media (max-width: 1400px) {
+      .salva {
+        width: 260px;
+        left: 71%;
+        top: 30%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header {
+        height: 550px;
+    }
+
+    .header h1 {
+        font-size: 4em;
+    }
+
+    .navbar {
+        font-size: 1em;
+        padding: 15px 30px;
+        flex-wrap: wrap;
+    }
+
+    .navbar li {
+        margin: 0 10px;
+    }
+
+    .tarjetas-container {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .tarjeta {
+        width: 250px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .turismo h2 {
+        font-size: 2em;
+    }
+
+    .tarjeta p {
+        font-size: 1.2em;
+    }
+           .salva {
+        width: 260px;
+        left: 71%;
+        top: 39%;
+    }
+}
+
+@media (max-width: 992px)
+{
+    .salva {
+        width: 260px;
+        left: 35%;
+        top: 40%;
+    }
+}
+
+/* Móviles y pantallas pequeñas (≤ 768px) */
+@media screen and (max-width: 768px) {
+    .header {
+        height: 450px;
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 3em;
+    }
+
+     .navbar-nav.scrollable {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+    .navbar {
+        font-size: 0.9em;
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+
+    }
+
+    .navbar li {
+        margin: 8px 0;
+    }
+
+    .navbar ul ul,
+.navbar ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 999;
+    display: none;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.navbar li:hover > ul {
+    display: block;
+}
+    .tarjetas-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    article {
+        padding: 30px 20px;
+        margin: 20px 10px;
+    }
+
+    .footer-logo img {
+        width: 120px;
+    }
+
+    .social-icons img {
+        width: 25px;
+    }
+
+    .fote {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+        .salva {
+        width: 260px;
+        left: 33%;
+        top: 30%;
+    }
+}
+
+/* Pantallas muy pequeñas (≤ 480px) */
+@media screen and (max-width: 480px) {
+    .header {
+        height: 350px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .tarjeta p,
+    .tarjeta h3 {
+        font-size: 1em;
+    }
+
+    .turismo h2 {
+        font-size: 1.5em;
+    }
+
+    .fote {
+        font-size: 14px;
+    }
+
+    .navbar {
+        font-size: 0.8em;
+    }
+            .salva {
+        width: 270px;
+        left: 21%;
+        top: 33%;
+    }
+}
